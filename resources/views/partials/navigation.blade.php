@@ -30,30 +30,36 @@
                             'icon' => 'calendar-week',
                             'subtitle' => 'See what is available in Summer 2025'
                         ])
-                        @include('partials.navigation-dropdown', [
-                            'url' => '/camp-page?type=teen&week=2',
-                            'title' => 'Teen Camp',
-                            'icon' => 'podium',
-                            'subtitle' => 'Camps for 7th-12th graders'
-                        ])
-                        @include('partials.navigation-dropdown', [
-                            'url' => '/camp-page?type=junior&week=5',
-                            'title' => 'Junior Camp',
-                            'icon' => 'ball-football',
-                            'subtitle' => 'For 3rd-6th graders'
-                        ])
-                        @include('partials.navigation-dropdown', [
-                            'url' => '/camp-page?type=combo&week=6',
-                            'title' => 'Combo Camp',
-                            'icon' => 'users-group',
-                            'subtitle' => 'Bring both teens and juniors'
-                        ])
-                        @include('partials.navigation-dropdown', [
-                            'url' => '#',
-                            'title' => 'Camp Rentals',
-                            'icon' => 'calendar-dollar',
-                            'subtitle' => 'Rent our campground for a week'
-                        ])
+                        @foreach($campTypes as $camptype)
+                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-secondary">
+                                <div class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                    <x-dynamic-component :component="$camptype->icon" class="size-6 text-gray-600 group-hover:text-accent" />
+                                </div>
+                                <div class="flex-auto">
+                                    <a href="/camp-page?type={{$camptype->id}}" class="block font-semibold text-gray-900 group-hover:text-white">
+                                        {{ $camptype->name }}
+                                        <span class="absolute inset-0"></span>
+                                    </a>
+                                    <p class="mt-1 text-gray-600 group-hover:text-base">{{$camptype->subtitle}}</p>
+                                </div>
+                            </div>
+
+                        @endforeach
+                        @foreach($campPages as $page)
+                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-secondary">
+                                <div class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                    <x-dynamic-component :component="$page->icon" class="size-6 text-gray-600 group-hover:text-accent" />
+                                </div>
+                                <div class="flex-auto">
+                                    <a href="/page/{{$page->slug}}" class="block font-semibold text-gray-900 group-hover:text-white">
+                                        {{ $page->title }}
+                                        <span class="absolute inset-0"></span>
+                                    </a>
+                                    <p class="mt-1 text-gray-600 group-hover:text-base">{{$page->subtitle}}</p>
+                                </div>
+                            </div>
+                        @endforeach
+
                         @include('partials.navigation-dropdown', [
                             'url' => '#',
                             'title' => 'Other Events',
