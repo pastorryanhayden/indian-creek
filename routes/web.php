@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CampPageController;
+use App\Http\Controllers\HomePageController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/camp-page', function () {
-    return view('camp-page');
-});
+Route::get('/', [HomePageController::class, 'index'])->name('home');
+Route::get('/camp-page', [CampPageController::class, 'index'])->name('camp-page');

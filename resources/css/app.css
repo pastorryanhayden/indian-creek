@@ -13,3 +13,11 @@
     --color-base: #D9D0C2;
     --color-secondary: #006633;
 }
+
+.top {
+    clip-path: polygon(0 0,100% 0,100% calc(100% - 50px),calc(50% + 50px) calc(100% - 50px),50% 100%,calc(50% - 50px) calc(100% - 50px),0 calc(100% - 50px));
+}
+.bottom {
+    clip-path: polygon(0 0,calc(50% - 0px - 50px) 0,50% calc(50px + 0px),calc(50% + 0px + 50px) 0,100% 0,100% 100%,0 100%);
+    margin-top: -50px;
+}
