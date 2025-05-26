@@ -7,7 +7,7 @@
         @include('partials.breadcrumbs')
             <h1 class="font-heading text-6xl mt-4 mx-auto">{{$page->title}}</h1>
             @if(@isset($page->image))
-            <img src="{{asset($page->image)}}" class="w-full mx-auto mt-4">
+            <img src="{{ Storage::url($page->image) }}" class="w-full mx-auto mt-4">
             @endif
 
             <div class="prose p-6 bg-white w-full max-w-4xl mx-auto mt-4">
