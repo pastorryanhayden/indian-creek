@@ -8,6 +8,6 @@
     <div class="col-start-2 col-end-12 lg:col-end-7 lg:order-first mt-6 lg:mt-0">
         <h1 class="text-8xl font-heading leading-20 ">The adventure <br>of a lifetime.</h1>
         <h3 class="text-4xl tracking-tight">Following Christ</h3>
-        <a href="#" class="inline-flex bg-accent text-white py-3 uppercase font-heading text-xl px-8 rounded-full mt-3">Explore 2025 Camps</a>
+        <a href="/camp-page" class="inline-flex bg-accent text-white py-3 uppercase font-heading text-xl px-8 rounded-full mt-3">Explore 2025 Camps</a>
     </div>
 </section>

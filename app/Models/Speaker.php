@@ -19,6 +19,14 @@ class Speaker extends Model
     }
 
     /**
+     * Get the events associated with the speaker.
+     */
+    public function events()
+    {
+        return $this->belongsToMany(Event::class, 'event_speaker', 'speaker_id', 'event_id');
+    }
+
+    /**
      * Get the formatted name with line breaks instead of spaces.
      */
     protected function formattedName(): Attribute

@@ -61,7 +61,7 @@
                         @endforeach
 
                         @include('partials.navigation-dropdown', [
-                            'url' => '#',
+                            'url' => '/events',
                             'title' => 'Other Events',
                             'icon' => 'calendar-event',
                             'subtitle' => 'Seasonal events'
@@ -78,30 +78,20 @@
                 </button>
                 <div class="absolute -left-24 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5" x-show="show == true" @click.away="show = false">
                     <div class="p-4">
-                        @include('partials.navigation-dropdown', [
-                            'url' => '#',
-                            'title' => 'Our Staff',
-                            'icon' => 'users',
-                            'subtitle' => 'Meet our leadership team'
-                        ])
-                        @include('partials.navigation-dropdown', [
-                            'url' => '#',
-                            'title' => 'Our Beliefs',
-                            'icon' => 'book',
-                            'subtitle' => 'Learn what we believe'
-                        ])
-                        @include('partials.navigation-dropdown', [
-                            'url' => '#',
-                            'title' => 'Our History',
-                            'icon' => 'clock-hour-3',
-                            'subtitle' => '30 years of serving Christ'
-                        ])
-                        @include('partials.navigation-dropdown', [
-                            'url' => '#',
-                            'title' => 'Work at ICBC',
-                            'icon' => 'file-description',
-                            'subtitle' => 'Sign up to become a camp counselor'
-                        ])
+                        @foreach($aboutPages as $page)
+                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-secondary">
+                                <div class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                    <x-dynamic-component :component="$page->icon" class="size-6 text-gray-600 group-hover:text-accent" />
+                                </div>
+                                <div class="flex-auto">
+                                    <a href="/page/{{$page->slug}}" class="block font-semibold text-gray-900 group-hover:text-white">
+                                        {{ $page->title }}
+                                        <span class="absolute inset-0"></span>
+                                    </a>
+                                    <p class="mt-1 text-gray-600 group-hover:text-base">{{$page->subtitle}}</p>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -114,36 +104,20 @@
                 </button>
                 <div class="absolute -right-6 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5" x-show="show == true" @click.away="show = false">
                     <div class="p-4">
-                        @include('partials.navigation-dropdown', [
-                            'url' => '#',
-                            'title' => 'Camp Conduct Guide',
-                            'icon' => 'list-check',
-                            'subtitle' => 'Rules for campers'
-                        ])
-                        @include('partials.navigation-dropdown', [
-                            'url' => '#',
-                            'title' => 'Directions and Location',
-                            'icon' => 'directions',
-                            'subtitle' => 'Where we are'
-                        ])
-                        @include('partials.navigation-dropdown', [
-                            'url' => '#',
-                            'title' => 'Camp Rental Guide',
-                            'icon' => 'license',
-                            'subtitle' => 'Essential info for camp rental weeks'
-                        ])
-                        @include('partials.navigation-dropdown', [
-                            'url' => '#',
-                            'title' => 'Camp Counselor Guide',
-                            'icon' => 'file-description',
-                            'subtitle' => 'Handbook for camp counselors'
-                        ])
-                        @include('partials.navigation-dropdown', [
-                            'url' => '#',
-                            'title' => 'FAQs',
-                            'icon' => 'help-octagon',
-                            'subtitle' => 'Frequently Asked Questions'
-                        ])
+                        @foreach($resourcesPages as $page)
+                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-secondary">
+                                <div class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                    <x-dynamic-component :component="$page->icon" class="size-6 text-gray-600 group-hover:text-accent" />
+                                </div>
+                                <div class="flex-auto">
+                                    <a href="/page/{{$page->slug}}" class="block font-semibold text-gray-900 group-hover:text-white">
+                                        {{ $page->title }}
+                                        <span class="absolute inset-0"></span>
+                                    </a>
+                                    <p class="mt-1 text-gray-600 group-hover:text-base">{{$page->subtitle}}</p>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -154,7 +128,7 @@
         <div class="fixed inset-0 z-20"></div>
         <div class="fixed inset-y-0 right-0 z-30 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10" @click.away="menu_open = false">
             <div class="flex items-center justify-between sm:justify-end">
-                <a href="#" class="-m-1.5 p-1.5 sm:hidden">
+                <a href="/" class="-m-1.5 p-1.5 sm:hidden">
                     <span class="sr-only">Indian Creek Baptist Camp</span>
                     <img class="h-8 w-auto" src="{{ asset('camp-logo-white.png') }}" alt="Indian Creek Baptist Camp">
                 </a>
@@ -176,12 +150,15 @@
                                 </svg>
                             </button>
                             <div class="mt-2 space-y-2" id="disclosure-1" x-show="open == true">
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">2025 Summer Camps</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Teen Camp</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Junior Camp</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Combo Camp</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Camp Rentals</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Other Events</a>
+                                <a href="/camp-page" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">2025 Summer Camps</a>
+                                @foreach($campTypes as $camptype)
+                                <a href="/camp-page?type={{$camptype->id}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">{{$camptype->name}}</a>
+                                @endforeach
+                                @foreach($campPages as $page)
+                                <a href="/page/{{$page->slug}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">{{$page->title}}</a>
+                                @endforeach
+                               
+                                <a href="/events" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Other Events</a>
                             </div>
                         </div>
                         <div class="-mx-3" x-data="{open: false}">
@@ -192,10 +169,10 @@
                                 </svg>
                             </button>
                             <div class="mt-2 space-y-2" id="disclosure-1" x-show="open == true">
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Our Staff</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Our Beliefs</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Our History</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Work at ICBC</a>
+                                @foreach($aboutPages as $page)
+                                <a href="/page/{{$page->slug}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">{{$page->title}}</a>
+                                @endforeach
+
                             </div>
                         </div>
                         <div class="-mx-3" x-data="{open: false}">
@@ -206,11 +183,10 @@
                                 </svg>
                             </button>
                             <div class="mt-2 space-y-2" id="disclosure-1" x-show="open == true">
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Camp Conduct Guide</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Directions</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Camp Rental Guide</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Camp Counselor Guide</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">FAQs</a>
+                                @foreach($resourcesPages as $page)
+                                <a href="/page/{{$page->slug}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">{{$page->title}}</a>
+                                @endforeach
+                               
                             </div>
                         </div>
                     </div>
