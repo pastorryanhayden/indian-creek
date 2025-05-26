@@ -24,9 +24,9 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer(['layouts.main', 'layouts.*'], function ($view) {
             $campTypes = CampType::all();
-            $campPages = Page::where('location', 'camps')->get();
-            $aboutPages = Page::where('location', 'about')->get();
-            $resourcesPages = Page::where('location', 'resources')->get();
+            $campPages = Page::where('location', 'camps')->where('status', 'active')->get();
+            $aboutPages = Page::where('location', 'about')->where('status', 'active')->get();
+            $resourcesPages = Page::where('location', 'resources')->where('status', 'active')->get();
             $view->with([
                 'campPages' => $campPages,
                 'aboutPages' => $aboutPages,
