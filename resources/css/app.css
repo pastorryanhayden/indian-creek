@@ -23,3 +23,10 @@
     clip-path: polygon(0 0,calc(50% - 0px - 50px) 0,50% calc(50px + 0px),calc(50% + 0px + 50px) 0,100% 0,100% 100%,0 100%);
     margin-top: -50px;
 }
+
+.stamp {
+    @apply absolute bg-accent text-white font-bold text-sm uppercase tracking-wide px-4 py-1 transform -rotate-12;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-4deg);
+}

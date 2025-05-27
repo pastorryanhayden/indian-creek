@@ -6,6 +6,11 @@
         <a class="flex flex-col items-center w-42 shrink-0" href="/camp-page?type={{$week->type_id}}&week={{$week->id}}">
             <div class="relative w-full h-48 overflow-hidden" style="clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%)">
                 <img src="{{ $speaker->image ? asset('storage/' . $speaker->image) : '/default-speaker.jpg' }}" alt="{{$speaker->name}}" class="w-full h-full object-cover">
+             @if ($week->status == 'full' || $week->status == 'almost full')
+                            <div class="stamp">
+                                {{ $week->status == 'full' ? 'FULL' : 'Almost Full' }}
+                            </div>
+                        @endif
             </div>
             <div class="mt-4 text-right text-base">
                 <p class="text-lg md:text-xl">{{$week->name}}</p>

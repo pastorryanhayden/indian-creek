@@ -11,6 +11,11 @@
                         <img src="{{ $speaker->image ? asset('storage/' . $speaker->image) : '/default-speaker.jpg' }}"
                              alt="{{ $speaker->name }}"
                              class="w-full h-full object-cover {{ $speaker->name === 'Abdel Judeh' ? 'object-top' : '' }}">
+                             @if ($week->status == 'full' || $week->status == 'almost full')
+                            <div class="stamp">
+                                {{ $week->status == 'full' ? 'FULL' : 'Almost Full' }}
+                            </div>
+                        @endif
                     </div>
                     <div class="mt-4 text-right text-base">
                         <p class="text-lg md:text-xl">{{ $week->name }}</p>
