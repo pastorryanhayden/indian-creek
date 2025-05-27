@@ -29,10 +29,10 @@
         <p class="text-2xl text-base text-center max-w-md mx-auto mt-12"
                x-show="week == '{{ $week->id }}'">
                 @if ($week->status == 'almost full')
-                    <span class="block font-bold">Almost Full</span>
+                    <span class="block font-bold text-accent">Almost Full</span>
                 @endif
                     @if ($week->status == 'full')
-                        <span class="block font-bold">At Capacity - Registration Closed</span>
+                        <span class="block font-bold text-accent">At Capacity - Registration Closed</span>
                     @endif
 </p>
         @foreach ($week->speakers as $speaker)
