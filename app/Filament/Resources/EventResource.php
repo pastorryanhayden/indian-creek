@@ -37,7 +37,7 @@ class EventResource extends Resource
                     ->schema([
                         TextInput::make('title')
                             ->required()
-                            ->reactive()
+                            ->live(onBlur: true)
                             ->afterStateUpdated(function (Forms\Set $set, $state) {
                                 $set('slug', Str::slug($state));
                             })

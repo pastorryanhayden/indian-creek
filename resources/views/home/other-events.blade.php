@@ -1,3 +1,4 @@
+{{--  
 <section style="background-image: url('/textures/topo.jpg');" class="grid grid-cols-1 md:grid-cols-11 py-20 gap-6 w-full px-4 md:px-0">
     @if(isset($featured_page))
     <a href="/page/{{ $featured_page->slug }}" class="bg-white col-span-full md:col-start-2 md:col-end-7 flex items-center justify-center text-center p-6 md:p-12 bg-center group relative overflow-hidden">
@@ -12,3 +13,4 @@
         <h4 class="font-heading text-4xl md:text-6xl text-base z-20">Young Preacher's <br>Summit</h4>
     </a>
 </section>
+--}}

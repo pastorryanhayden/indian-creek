@@ -1,4 +1,4 @@
-<div class="w-full bottom md:px-12 pt-6 md:pt-12 pb-64 bg-bottom bg-no-repeat bg-contain bg-secondary z-20" style="background-image: url('/landscape.png');">
+<div class="w-full md:px-12 pt-6 md:pt-12 pb-64 bg-bottom bg-no-repeat bg-contain bg-secondary z-20" style="background-image: url('/landscape.png');">
     <h2 class="w-full text-center my-8 text-6xl font-heading text-base shrink-0">2025 Camp Speakers</h2>
     <div class="flex w-full flex-wrap gap-6 justify-center">
         @foreach ($weeks as $week)

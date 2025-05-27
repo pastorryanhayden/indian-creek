@@ -60,12 +60,14 @@
                             </div>
                         @endforeach
 
+                        @if($showEvents === true)
                         @include('partials.navigation-dropdown', [
                             'url' => '/events',
                             'title' => 'Other Events',
                             'icon' => 'calendar-event',
                             'subtitle' => 'Seasonal events'
                         ])
+                        @endif
                     </div>
                 </div>
             </div>
@@ -157,8 +159,9 @@
                                 @foreach($campPages as $page)
                                 <a href="/page/{{$page->slug}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">{{$page->title}}</a>
                                 @endforeach
-                               
+                               @if($showEvents === true)
                                 <a href="/events" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Other Events</a>
+                                @endif
                             </div>
                         </div>
                         <div class="-mx-3" x-data="{open: false}">
