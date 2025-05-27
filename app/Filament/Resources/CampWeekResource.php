@@ -48,19 +48,14 @@ class CampWeekResource extends Resource
                             Forms\Components\Select::make('status')
                                 ->options([
                                     'active' => 'Active',
+                                    'almost full' => 'Almost Full',
+                                    'full' => 'Full',
                                     'inactive' => 'Inactive',
                                 ])
                                 ->default('active')
                                 ->required()
                                 ->columnSpan(1),
-                            Forms\Components\Toggle::make('is_open')
-                                ->default(true)
-                                ->required()
-                                ->columnSpan(1),
-                            Forms\Components\Toggle::make('is_almost_full')
-                                ->default(true)
-                                ->required()
-                                ->columnSpan(1),
+                            
                         ]),
                     ]),
                 Forms\Components\Section::make('Schedule')
@@ -106,10 +101,6 @@ class CampWeekResource extends Resource
                     ->label('Type')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status'),
-                Tables\Columns\IconColumn::make('is_almost_full')
-                    ->boolean(),
-                Tables\Columns\IconColumn::make('is_open')
-                    ->boolean(),
                 Tables\Columns\TextColumn::make('start_date')
                     ->date(),
                 Tables\Columns\TextColumn::make('end_date')

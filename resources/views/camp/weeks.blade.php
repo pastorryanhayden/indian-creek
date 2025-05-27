@@ -26,16 +26,19 @@
         @endforeach
     </div>
     @foreach ($weeks as $week)
+        <p class="text-2xl text-base text-center max-w-md mx-auto mt-12"
+               x-show="week == '{{ $week->id }}'">
+                @if ($week->status == 'almost full')
+                    <span class="block font-bold">Almost Full</span>
+                @endif
+                    @if ($week->status == 'full')
+                        <span class="block font-bold">At Capacity - Registration Closed</span>
+                    @endif
+</p>
         @foreach ($week->speakers as $speaker)
             <p class="text-2xl text-base text-center max-w-md mx-auto mt-12"
                x-show="week == '{{ $week->id }}'">
-                @if ($week->is_almost_full && $week->is_open)
-                    <span class="block font-bold">Almost Full</span>
-                @endif
-                    @if (!$week->is_open)
-                        <span class="block font-bold">Registration Closed</span>
-                    @endif
-
+               
                 {{ $speaker->bio }}
             </p>
         @endforeach

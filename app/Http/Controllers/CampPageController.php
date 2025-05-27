@@ -16,8 +16,7 @@ class CampPageController extends Controller
 
 
         $weeks = CampWeek::with(['speakers', 'type'])
-            ->where('status', 'active')
-            ->where('is_open', true)
+            ->where('status','!=' ,'hidden')
             ->get();
 
         // Get query parameters

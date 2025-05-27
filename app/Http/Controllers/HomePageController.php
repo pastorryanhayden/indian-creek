@@ -16,8 +16,7 @@ class HomePageController extends Controller
         $featured_page = Page::where('featured', true)->first();
 
         $weeks = CampWeek::with(['speakers', 'type'])
-            ->where('status', 'active')
-            ->where('is_open', true)
+            ->where('status', '!=', 'hidden')
             ->get();
         return view('home', compact('types', 'weeks', 'featured_page'));
     }
