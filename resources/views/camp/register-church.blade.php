@@ -5,8 +5,6 @@
             <h3 class="font-heading text-3xl text-secondary">Camper Registration FAQs</h3>
             <h4 class="font-bold text-xl mt-6">Can we change weeks?</h4>
             <p class="text-lg">In most cases, no.  Our weeks fill up fast.  If you need to change weeks, please contact the office as soon as possible.</p>
-            <h4 class="font-bold text-xl mt-6">Are there any discounts for the counselors?</h4>
-            <p class="text-lg">Each church gets one free counselor for every 10 campers.</p>
             <h4 class="font-bold text-xl mt-6">How many counselors are needed?</h4>
             <p class="text-lg">Each church must bring at least one male counselor for the boys (if they are bringing boys) and one female for the girls (if they are bringing girls.)  Counselors must stay with the campers all week and will sleep in the cabins.</p>
         </div>
