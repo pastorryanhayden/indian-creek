@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+
+@theme {
+    --font-heading: 'Bebas Neue', serif;
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-accent: #C80000;
+    --color-base: #D9D0C2;
+    --color-secondary: #006633;
+}
+
+.top {
+    clip-path: polygon(0 0,100% 0,100% calc(100% - 50px),calc(50% + 50px) calc(100% - 50px),50% 100%,calc(50% - 50px) calc(100% - 50px),0 calc(100% - 50px));
+}
+.bottom {
+    clip-path: polygon(0 0,calc(50% - 0px - 50px) 0,50% calc(50px + 0px),calc(50% + 0px + 50px) 0,100% 0,100% 100%,0 100%);
+    margin-top: -50px;
+}
+
+.stamp {
+    @apply absolute bg-accent text-white font-bold text-sm uppercase tracking-wide px-4 py-1 transform -rotate-12;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-4deg);
+}
