@@ -1,6 +1,6 @@
 <div class="bottom top w-full  md:px-12 pt-6 md:pt-12 pb-6 bg-white ">
     <h2 class="w-full text-center mt-8 mb-24 text-6xl font-heading text-secondary shrink-0">Step 4:Register Your Campers</h2>
-    <div class="w-full max-w-4xl mx-auto grid grid-cols-2 gap-12 mb-24">
+    <div class="w-full max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24 p-8 lg:p-0">
         <div class="bg-black text-base p-6">
             <p class="text-lg">After you have registered your church group, you can start to register individual campers and counselors. Each camper must have the information filled out by their parent/guardian and you must bring this form and the difference of their camp cost with you when you come to camp.</p>
             <p class="text-lg mt-6">Download the form below and bring it with you to camp:</p>

@@ -1,4 +1,4 @@
-<div class="bottom w-full md:px-12 pt-6 md:pt-12 pb-48 bg-base z-10 bg-bottom bg-no-repeat bg-contain" style="background-image: url('/landscape2.jpg');">
+<div class="bottom w-full px-8 md:px-12 pt-6 md:pt-12 pb-48 bg-base z-10 bg-bottom bg-no-repeat bg-contain " style="background-image: url('/landscape2.jpg');">
     <h2 class="w-full text-center mt-8 mb-24 text-6xl font-heading text-secondary shrink-0">Step 5: Come Ready to Enjoy Camp</h2>
     <div class="w-full max-w-4xl mx-auto mb-24 flex justify-center">
         <div class="max-w-md text-center">

@@ -1,6 +1,6 @@
 <div class="bottom top w-full  md:px-12 pt-6 md:pt-12 pb-6 bg-base ">
     <h2 class="w-full text-center mt-8 mb-24 text-6xl font-heading text-secondary shrink-0">Step 3:Register Your Church</h2>
-    <div class="w-full max-w-4xl mx-auto grid grid-cols-2 gap-12 mb-24">
+    <div class="w-full max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24 p-8 lg:p-0">
         <div>
             <h3 class="font-heading text-3xl text-secondary">Camper Registration FAQs</h3>
             <h4 class="font-bold text-xl mt-6">Can we change weeks?</h4>
