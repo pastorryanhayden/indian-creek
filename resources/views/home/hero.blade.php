@@ -7,7 +7,7 @@
 
     <div class="col-start-2 col-end-12 lg:col-end-7 lg:order-first mt-6">
         <h1 class="text-8xl font-heading leading-20 ">Made for More</h1>
-        <h3 class="text-4xl tracking-tight">Indian Creek 2025</h3>
-        <a href="/camp-page" class="inline-flex bg-accent text-white py-3 uppercase font-heading text-xl px-8 rounded-full mt-3">Explore 2025 Camps</a>
+        <h3 class="text-4xl tracking-tight">Indian Creek 2026</h3>
+        <a href="/camp-page" class="inline-flex bg-accent text-white py-3 uppercase font-heading text-xl px-8 rounded-full mt-3">Explore 2026 Camps</a>
     </div>
 </section>

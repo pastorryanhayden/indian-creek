@@ -14,7 +14,7 @@
 
     </div>
     <div class="font-heading tex-base">
-        <p class="text-4xl w-full border-b-6 border-base leading-tight text-base">Summer 2025</p>
+        <p class="text-4xl w-full border-b-6 border-base leading-tight text-base">Summer 2026</p>
         <h2 class="text-8xl leading-22 mt-2 text-base">Summer</h2>
         <div class="flex border-b-6 border-base "><h2 class="text-8xl mr-4 leading-22 text-base">Camp</h2> <p class="text-5xl mr-4 leading-10 text-base">At <br> ICBC </p></div>
         <p class="text-2xl text-center font-sans w-40 mx-auto mt-4 text-base">Start your adventure in 5 easy steps.</p>
