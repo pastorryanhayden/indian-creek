@@ -23,6 +23,6 @@
 
     </div>
     <div class="col-span-full p-6 md:p-12 flex justify-center">
-        <a href="/camp-page" class="bg-accent text-white py-4 px-6 rounded-full text-4xl font-heading hover:brightness-75">Explore 2025 Camps</a>
+        <a href="/camp-page" class="bg-accent text-white py-4 px-6 rounded-full text-4xl font-heading hover:brightness-75">Explore 2026 Camps</a>
     </div>
 </div>
