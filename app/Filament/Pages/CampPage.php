@@ -22,7 +22,11 @@ class CampPage extends Page implements HasForms
 
     public ?array $data = [];
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-map';
+
+    protected static ?string $navigationGroup = 'Camp Management';
+
+    protected static ?int $navigationSort = 1;
 
     protected static string $view = 'filament.pages.camp-page';
 

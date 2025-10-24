@@ -16,6 +16,10 @@ class SpeakerResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-microphone';
 
+    protected static ?string $navigationGroup = 'Camp Management';
+
+    protected static ?int $navigationSort = 3;
+
     public static function form(Form $form): Form
     {
         return $form

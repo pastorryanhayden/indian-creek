@@ -24,7 +24,9 @@ class HomePage extends Page implements HasForms
 
     public ?array $data = [];
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
+
+    protected static ?int $navigationSort = 1;
 
     protected static string $view = 'filament.pages.home-page';
 

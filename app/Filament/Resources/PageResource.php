@@ -20,7 +20,7 @@ class PageResource extends Resource
 
     protected static ?string $navigationLabel = 'Pages';
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 10;
 
     public static function form(Form $form): Form
     {

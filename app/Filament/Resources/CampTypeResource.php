@@ -19,7 +19,9 @@ class CampTypeResource extends Resource
 
     protected static ?string $navigationLabel = 'Camp Types';
 
-    protected static ?int $navigationSort = 2;
+    protected static ?string $navigationGroup = 'Camp Management';
+
+    protected static ?int $navigationSort = 4;
 
     public static function form(Form $form): Form
     {
