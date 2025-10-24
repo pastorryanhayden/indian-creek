@@ -1,22 +1,29 @@
 <div class="bottom top w-full  md:px-12 pt-6 md:pt-12 pb-6 bg-base ">
-    <h2 class="w-full text-center mt-8 mb-24 text-6xl font-heading text-secondary shrink-0">Step 3:Register Your Church</h2>
+    <h2 class="w-full text-center mt-8 mb-24 text-6xl font-heading text-secondary shrink-0">{{ $campPage?->step_3_title ?? 'Step 3:Register Your Church' }}</h2>
     <div class="w-full max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24 p-8 lg:p-0">
         <div>
             <h3 class="font-heading text-3xl text-secondary">Camper Registration FAQs</h3>
-            <h4 class="font-bold text-xl mt-6">Can we change weeks?</h4>
-            <p class="text-lg">In most cases, no.  Our weeks fill up fast.  If you need to change weeks, please contact the office as soon as possible.</p>
-            <h4 class="font-bold text-xl mt-6">How many counselors are needed?</h4>
-            <p class="text-lg">Each church must bring at least one male counselor for the boys (if they are bringing boys) and one female for the girls (if they are bringing girls.)  Counselors must stay with the campers all week and will sleep in the cabins.</p>
+            @if($campPage?->step_3_faq && count($campPage->step_3_faq) > 0)
+                @foreach($campPage->step_3_faq as $faq)
+                <h4 class="font-bold text-xl mt-6">{{ $faq['question'] }}</h4>
+                <p class="text-lg">{{ $faq['answer'] }}</p>
+                @endforeach
+            @endif
         </div>
         <div class="bg-black text-base p-6">
-            <p class="text-lg">Camp space is limited.  We have camps sell out every year.</p>
-            <p class="font-bold text-lg mt-6">You must fill out a form for your church and send in a (non-refundable) deposit to reserve your church’s place at camp.</p>
-            <p class="text-lg mt-6">Download the form below and mail it (with deposit check) to:</p>
-            <p class="text-lg mt-6">Indian Creek Baptist Camp </br>2214 Bank Street, </br>Louisville, KY 40212</p>
-            <a href="https://indiancreek.camp/church-form.pdf" target="_blank" class="w-full bg-accent hover:bg-red-900 shadow hover:shadow-none py-3 px-6 font-heading font-bold text-2xl flex justify-center items-center text-center text-white mt-6 rounded-full mr-0">
-
+            @if($campPage?->step_3_info_text && count($campPage->step_3_info_text) > 0)
+                @foreach($campPage->step_3_info_text as $index => $info)
+                <p class="text-lg {{ $index > 0 ? 'mt-6' : '' }} {{ $index == 1 ? 'font-bold' : '' }}">{{ $info['paragraph'] }}</p>
+                @endforeach
+            @endif
+            @if($campPage?->step_3_address)
+            <p class="text-lg mt-6">{!! nl2br(e($campPage->step_3_address)) !!}</p>
+            @endif
+            @if($campPage?->step_3_download && $campPage?->step_3_download_content)
+            <a href="{{ str_starts_with($campPage->step_3_download, 'http') ? $campPage->step_3_download : (str_starts_with($campPage->step_3_download, '/') ? $campPage->step_3_download : '/storage/' . $campPage->step_3_download) }}" target="_blank" class="w-full bg-accent hover:bg-red-900 shadow hover:shadow-none py-3 px-6 font-heading font-bold text-2xl flex justify-center items-center text-center text-white mt-6 rounded-full mr-0">
                 <x-tabler-file-download class="size-6 text-white mr-2" />
-                Download Registration Form</a>
+                {{ $campPage->step_3_download_content }}</a>
+            @endif
         </div>
 
     </div>

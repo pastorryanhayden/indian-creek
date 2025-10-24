@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CampType;
 use App\Models\CampWeek;
 use App\Models\Page;
+use App\Models\HomePage;
 
 
 class HomePageController extends Controller
@@ -18,6 +19,9 @@ class HomePageController extends Controller
         $weeks = CampWeek::with(['speakers', 'type'])
             ->where('status', '!=', 'hidden')
             ->get();
-        return view('home', compact('types', 'weeks', 'featured_page'));
+
+        $homePage = HomePage::first();
+
+        return view('home', compact('types', 'weeks', 'featured_page', 'homePage'));
     }
 }
