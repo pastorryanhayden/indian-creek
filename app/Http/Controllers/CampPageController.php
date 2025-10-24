@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CampType;
 use App\Models\CampWeek;
+use App\Models\CampPage;
 use Illuminate\Http\Request;
 
 class CampPageController extends Controller
@@ -12,8 +13,6 @@ class CampPageController extends Controller
     {
         // Fetch all camp types and weeks
         $types = CampType::all();
-
-
 
         $weeks = CampWeek::with(['speakers', 'type'])
             ->where('status','!=' ,'hidden')
@@ -51,6 +50,8 @@ class CampPageController extends Controller
         $defaultTypeId = (string) $defaultTypeId;
         $defaultWeekId = (string) $defaultWeekId;
 
-        return view('camp-page', compact('types', 'weeks', 'defaultTypeId', 'defaultWeekId'));
+        $campPage = CampPage::first();
+
+        return view('camp-page', compact('types', 'weeks', 'defaultTypeId', 'defaultWeekId', 'campPage'));
     }
 }
