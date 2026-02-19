@@ -1,4 +1,10 @@
 {
+  "resources/js/admin/tiptap.js": {
+    "file": "assets/tiptap.js",
+    "name": "tiptap",
+    "src": "resources/js/admin/tiptap.js",
+    "isEntry": true
+  },
   "resources/js/app.js": {
     "file": "assets/app.js",
     "name": "app",

@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/js/app.js'],
+            input: ['resources/js/app.js', 'resources/js/admin/tiptap.js'],
             refresh: true,
         }),
         tailwindcss(),
@@ -14,8 +14,9 @@ export default defineConfig({
         outDir: 'public/build',
         rollupOptions: {
             output: {
-                entryFileNames: 'assets/app.js',
-                assetFileNames: 'assets/app.css',
+                entryFileNames: 'assets/[name].js',
+                chunkFileNames: 'assets/[name].js',
+                assetFileNames: 'assets/[name][extname]',
             },
         },
     },
