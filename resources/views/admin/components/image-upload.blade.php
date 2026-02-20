@@ -1,4 +1,7 @@
-<div class="w-full" x-data="imageUpload()" x-init="init('{{ $currentImage ?? '' }}')">
+@php
+$currentImageUrl = isset($currentImage) && $currentImage ? \Illuminate\Support\Facades\Storage::disk('public')->url($currentImage) : '';
+@endphp
+<div class="w-full" x-data="imageUpload()" x-init="init('{{ $currentImageUrl }}')">
     <label class="block text-sm font-medium mb-2" style="color: var(--color-text-secondary);">{{ $label }}</label>
     
     <!-- Current Image Preview -->
@@ -70,7 +73,7 @@ function imageUpload() {
         
         init(currentImage) {
             if (currentImage) {
-                this.currentImageUrl = '/storage/' + currentImage;
+                this.currentImageUrl = currentImage;
             }
         },
         

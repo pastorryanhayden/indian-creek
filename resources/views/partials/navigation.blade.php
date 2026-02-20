@@ -31,9 +31,9 @@
                             'subtitle' => 'See what is available in Summer 2025'
                         ])
                         @foreach($campTypes as $camptype)
-                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-secondary">
+                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-brand-green">
                                 <div class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                    <x-dynamic-component :component="$camptype->icon" class="size-6 text-gray-600 group-hover:text-accent" />
+                                    <x-dynamic-component :component="$camptype->icon" class="size-6 text-gray-600 group-hover:text-brand-red" />
                                 </div>
                                 <div class="flex-auto">
                                     <a href="/camp-page?type={{$camptype->id}}" class="block font-semibold text-gray-900 group-hover:text-white">
@@ -46,9 +46,9 @@
 
                         @endforeach
                         @foreach($campPages as $page)
-                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-secondary">
+                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-brand-green">
                                 <div class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                    <x-dynamic-component :component="$page->icon" class="size-6 text-gray-600 group-hover:text-accent" />
+                                    <x-dynamic-component :component="$page->icon" class="size-6 text-gray-600 group-hover:text-brand-red" />
                                 </div>
                                 <div class="flex-auto">
                                     <a href="/page/{{$page->slug}}" class="block font-semibold text-gray-900 group-hover:text-white">
@@ -81,9 +81,9 @@
                 <div class="absolute -left-24 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5" x-show="show == true" @click.away="show = false">
                     <div class="p-4">
                         @foreach($aboutPages as $page)
-                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-secondary">
+                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-brand-green">
                                 <div class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                    <x-dynamic-component :component="$page->icon" class="size-6 text-gray-600 group-hover:text-accent" />
+                                    <x-dynamic-component :component="$page->icon" class="size-6 text-gray-600 group-hover:text-brand-red" />
                                 </div>
                                 <div class="flex-auto">
                                     <a href="/page/{{$page->slug}}" class="block font-semibold text-gray-900 group-hover:text-white">
@@ -107,9 +107,9 @@
                 <div class="absolute -right-6 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5" x-show="show == true" @click.away="show = false">
                     <div class="p-4">
                         @foreach($resourcesPages as $page)
-                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-secondary">
+                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-brand-green">
                                 <div class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                    <x-dynamic-component :component="$page->icon" class="size-6 text-gray-600 group-hover:text-accent" />
+                                    <x-dynamic-component :component="$page->icon" class="size-6 text-gray-600 group-hover:text-brand-red" />
                                 </div>
                                 <div class="flex-auto">
                                     <a href="/page/{{$page->slug}}" class="block font-semibold text-gray-900 group-hover:text-white">
@@ -145,27 +145,27 @@
                 <div class="-my-6 divide-y divide-gray-500/10">
                     <div class="space-y-2 py-6">
                         <div class="-mx-3" x-data="{open: false}">
-                            <button type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-gray-100 hover:bg-secondary" aria-controls="disclosure-1" aria-expanded="false" @click="open = !open">
+                            <button type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-gray-100 hover:bg-brand-green" aria-controls="disclosure-1" aria-expanded="false" @click="open = !open">
                                 Camps & Events
                                 <svg class="size-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
                                     <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
                                 </svg>
                             </button>
                             <div class="mt-2 space-y-2" id="disclosure-1" x-show="open == true">
-                                <a href="/camp-page" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">2025 Summer Camps</a>
+                                <a href="/camp-page" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-brand-green">2025 Summer Camps</a>
                                 @foreach($campTypes as $camptype)
-                                <a href="/camp-page?type={{$camptype->id}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">{{$camptype->name}}</a>
+                                <a href="/camp-page?type={{$camptype->id}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-brand-green">{{$camptype->name}}</a>
                                 @endforeach
                                 @foreach($campPages as $page)
-                                <a href="/page/{{$page->slug}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">{{$page->title}}</a>
+                                <a href="/page/{{$page->slug}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-brand-green">{{$page->title}}</a>
                                 @endforeach
                                @if($showEvents === true)
-                                <a href="/events" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">Other Events</a>
+                                <a href="/events" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-brand-green">Other Events</a>
                                 @endif
                             </div>
                         </div>
                         <div class="-mx-3" x-data="{open: false}">
-                            <button type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-gray-100 hover:bg-secondary" aria-controls="disclosure-1" aria-expanded="false" @click="open = !open">
+                            <button type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-gray-100 hover:bg-brand-green" aria-controls="disclosure-1" aria-expanded="false" @click="open = !open">
                                 About Us
                                 <svg class="size-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
                                     <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
@@ -173,13 +173,13 @@
                             </button>
                             <div class="mt-2 space-y-2" id="disclosure-1" x-show="open == true">
                                 @foreach($aboutPages as $page)
-                                <a href="/page/{{$page->slug}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">{{$page->title}}</a>
+                                <a href="/page/{{$page->slug}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-brand-green">{{$page->title}}</a>
                                 @endforeach
 
                             </div>
                         </div>
                         <div class="-mx-3" x-data="{open: false}">
-                            <button type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-gray-100 hover:bg-secondary" aria-controls="disclosure-1" aria-expanded="false" @click="open = !open">
+                            <button type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-gray-100 hover:bg-brand-green" aria-controls="disclosure-1" aria-expanded="false" @click="open = !open">
                                 Resources
                                 <svg class="size-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
                                     <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
@@ -187,7 +187,7 @@
                             </button>
                             <div class="mt-2 space-y-2" id="disclosure-1" x-show="open == true">
                                 @foreach($resourcesPages as $page)
-                                <a href="/page/{{$page->slug}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-secondary">{{$page->title}}</a>
+                                <a href="/page/{{$page->slug}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-brand-green">{{$page->title}}</a>
                                 @endforeach
                                
                             </div>

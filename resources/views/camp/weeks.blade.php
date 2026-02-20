@@ -8,7 +8,7 @@
                         :class="week == '{{ $week->id }}' ? '' : 'opacity-40'"
                         x-show="type == '{{ $week->type_id }}'">
                     <div class="relative w-full h-48 overflow-hidden" style="clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%)">
-                        <img src="{{ $speaker->image ? asset('storage/' . $speaker->image) : '/default-speaker.jpg' }}"
+                        <img src="{{ $speaker->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($speaker->image) : '/default-speaker.jpg' }}"
                              alt="{{ $speaker->name }}"
                              class="w-full h-full object-cover {{ $speaker->name === 'Abdel Judeh' ? 'object-top' : '' }}">
                              @if ($week->status == 'full' || $week->status == 'almost full')
@@ -34,10 +34,10 @@
         <p class="text-2xl text-base text-center max-w-md mx-auto mt-12"
                x-show="week == '{{ $week->id }}'">
                 @if ($week->status == 'almost full')
-                    <span class="block font-bold text-accent">Almost Full</span>
+                    <span class="block font-bold text-brand-red">Almost Full</span>
                 @endif
                     @if ($week->status == 'full')
-                        <span class="block font-bold text-accent">At Capacity - Registration Closed</span>
+                        <span class="block font-bold text-brand-red">At Capacity - Registration Closed</span>
                     @endif
 </p>
         @foreach ($week->speakers as $speaker)

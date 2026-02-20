@@ -21,7 +21,15 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'admin' => \App\Http\Middleware\EnsureIsAdmin::class,
         ]);
+
+        $middleware->redirectGuestsTo(fn () => route('admin.login'));
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        $exceptions->render(function (\Illuminate\Auth\AuthenticationException $e, $request) {
+            if ($request->is('admin/*') || $request->is('admin')) {
+                return redirect()->guest(route('admin.login'));
+            }
+
+            return redirect()->guest('/');
+        });
     })->create();

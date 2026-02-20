@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\HomePageController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\SpeakerController;
+use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,9 @@ Route::middleware('guest')->group(function () {
 // Protected admin routes
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+    // Uploads
+    Route::post('/upload/image', [UploadController::class, 'image'])->name('upload.image');
 
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

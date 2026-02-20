@@ -14,9 +14,9 @@
     --font-heading: 'Bebas Neue', serif;
     --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
-    --color-accent: #C80000;
+    --color-brand-red: #C80000;
     --color-base: #D9D0C2;
-    --color-secondary: #006633;
+    --color-brand-green: #006633;
 }
 
 .top {
@@ -25,6 +25,16 @@
 .bottom {
     clip-path: polygon(0 0,calc(50% - 0px - 50px) 0,50% calc(50px + 0px),calc(50% + 0px + 50px) 0,100% 0,100% 100%,0 100%);
     margin-top: -50px;
+}
+
+.ProseMirror img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+.ProseMirror img.ProseMirror-selectednode {
+    outline: 2px solid var(--color-accent, #B85C38);
+    outline-offset: 2px;
 }
 
 .stamp {

@@ -6,9 +6,9 @@
         muted
         loop
         playsinline
-        poster="{{ $campPage?->hero_poster ? (str_starts_with($campPage->hero_poster, '/') ? $campPage->hero_poster : '/storage/' . $campPage->hero_poster) : '/background.jpg' }}"
+        poster="{{ $campPage?->hero_poster ? \Illuminate\Support\Facades\Storage::disk('public')->url($campPage->hero_poster) : '/background.jpg' }}"
     >
-        <source src="{{ str_starts_with($campPage->hero_video, '/') ? $campPage->hero_video : '/storage/' . $campPage->hero_video }}" type="video/mp4" />
+        <source src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($campPage->hero_video) }}" type="video/mp4" />
         Your browser does not support the video tag.
     </video>
     @endif

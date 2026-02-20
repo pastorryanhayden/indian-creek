@@ -10,7 +10,7 @@
         <h1 class="text-8xl font-heading leading-20 ">{{ $homePage?->main_title ?? 'Made for More' }}</h1>
         <h3 class="text-4xl tracking-tight">{{ $homePage?->main_subtitle ?? 'Indian Creek 2026' }}</h3>
         @if($homePage?->hero_button_text && $homePage?->hero_button_url)
-        <a href="{{ $homePage->hero_button_url }}" class="inline-flex bg-accent text-white py-3 uppercase font-heading text-xl px-8 rounded-full mt-3">{{ $homePage->hero_button_text }}</a>
+        <a href="{{ $homePage->hero_button_url }}" class="inline-flex bg-brand-red text-white py-3 uppercase font-heading text-xl px-8 rounded-full mt-3">{{ $homePage->hero_button_text }}</a>
         @endif
     </div>
 </section>

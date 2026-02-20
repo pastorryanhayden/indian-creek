@@ -7,10 +7,9 @@
 
     <title>@yield('title', 'Admin') | Indian Creek Camp</title>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
-    <!-- TipTap Editor -->
+    <!-- TipTap Editor (must load before app.js so globals are set before Alpine starts) -->
     @vite(['resources/js/admin/tiptap.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     
     <style>
         /* 60/30/10 Color Rule - Warm Autumn Professional */
@@ -326,5 +325,6 @@
             </aside>
         </div>
     </div>
+    @stack('scripts')
 </body>
 </html>

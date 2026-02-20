@@ -8,16 +8,16 @@
                 $colClass = $type->featured ? 'col-span-full md:col-span-6' : 'col-span-6 md:col-span-3';
             @endphp
             <button class="cursor-pointer bg-white {{ $colClass }} flex items-center justify-center text-center p-12 bg-center group relative"
-                    :class="type == '{{ $type->id }}' && 'border-6 border-accent'"
+                    :class="type == '{{ $type->id }}' && 'border-6 border-brand-red'"
                     @click="type = '{{ $type->id }}'; week = '{{ $firstWeekId }}'; updateQueryParams()">
-                <img src="{{ $type->image ? asset('storage/' . $type->image) : '/default-type.jpg' }}"
+                <img src="{{ $type->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($type->image) : '/default-type.jpg' }}"
                      alt="{{ $type->name }}"
                      class="absolute top-0 bottom-0 left-0 right-0 w-full object-cover h-full saturate-10 shadow-2xl group-hover:saturate-100 group-hover:shadow-none"
                      :class="type == '{{ $type->id }}' && 'saturate-100 shadow-none'">
                 <div class="absolute top-0 bottom-0 left-0 right-0 w-full object-cover h-full z-10 bg-base opacity-65 group-hover:opacity-25 group-hover:bg-black"
                      :class="type == '{{ $type->id }}' && 'bg-black opacity-25'"></div>
                 <h4 class="font-heading text-6xl text-black group-hover:text-base z-20"
-                    :class="type == '{{ $type->id }}' && 'text-accent!'">
+                    :class="type == '{{ $type->id }}' && 'text-brand-red!'">
                     {!! $type->formatted_name !!}
                 </h4>
             </button>

@@ -38,7 +38,7 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     @if($type->image)
-                                        <img src="{{ asset('storage/' . $type->image) }}" alt="{{ $type->name }}" class="w-12 h-12 object-cover rounded-lg" style="border: 1px solid var(--color-border);">
+                                        <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($type->image) }}" alt="{{ $type->name }}" class="w-12 h-12 object-cover rounded-lg" style="border: 1px solid var(--color-border);">
                                     @else
                                         <div class="w-12 h-12 rounded-lg flex items-center justify-center" style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
                                             <x-tabler-photo class="w-5 h-5" style="color: var(--color-text-secondary);" />

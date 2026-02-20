@@ -31,7 +31,7 @@
                                     <td>
                                         <div class="flex items-center gap-3">
                                             @if($event->image)
-                                                <img src="{{ asset('storage/' . $event->image) }}" alt="" class="w-10 h-10 object-cover rounded">
+                                                <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($event->image) }}" alt="" class="w-10 h-10 object-cover rounded">
                                             @else
                                                 <div class="w-10 h-10 bg-base-200 rounded flex items-center justify-center text-base-content/30">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path d="M16 3l0 4" /><path d="M8 3l0 4" /><path d="M4 11l16 0" /><path d="M11 15l1 0" /><path d="M12 15l0 3" /></svg>
