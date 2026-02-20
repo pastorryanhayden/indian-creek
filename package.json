@@ -15,7 +15,9 @@
         "vite": "^6.2.4"
     },
     "dependencies": {
+        "@hotwired/stimulus": "^3.2.2",
         "@tiptap/core": "^3.20.0",
+        "@tiptap/extension-image": "^3.20.0",
         "@tiptap/extension-link": "^3.20.0",
         "@tiptap/extension-underline": "^3.20.0",
         "@tiptap/starter-kit": "^3.20.0",
