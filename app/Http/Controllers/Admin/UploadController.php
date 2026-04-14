@@ -20,4 +20,21 @@ class UploadController extends Controller
             'url' => Storage::disk('public')->url($path),
         ]);
     }
+
+    public function file(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,txt,csv,zip|max:10240',
+        ]);
+
+        $uploaded = $request->file('file');
+        $originalName = $uploaded->getClientOriginalName();
+
+        $path = $uploaded->store('editor-files', ['disk' => 's3', 'visibility' => 'public']);
+
+        return response()->json([
+            'url' => Storage::disk('s3')->url($path),
+            'name' => $originalName,
+        ]);
+    }
 }
