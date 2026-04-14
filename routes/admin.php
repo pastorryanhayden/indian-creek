@@ -37,6 +37,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     // Uploads
     Route::post('/upload/image', [UploadController::class, 'image'])->name('upload.image');
+    Route::post('/upload/file', [UploadController::class, 'file'])->name('upload.file');
 
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

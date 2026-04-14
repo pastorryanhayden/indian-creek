@@ -26,9 +26,9 @@
                     <div class="p-4">
                         @include('partials.navigation-dropdown', [
                             'url' => '/camp-page',
-                            'title' => '2025 Summer Camps',
+                            'title' => '2026 Summer Camps',
                             'icon' => 'calendar-week',
-                            'subtitle' => 'See what is available in Summer 2025'
+                            'subtitle' => 'See what is available in Summer 2026'
                         ])
                         @foreach($campTypes as $camptype)
                             <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-brand-green">
@@ -152,7 +152,7 @@
                                 </svg>
                             </button>
                             <div class="mt-2 space-y-2" id="disclosure-1" x-show="open == true">
-                                <a href="/camp-page" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-brand-green">2025 Summer Camps</a>
+                                <a href="/camp-page" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-brand-green">2026 Summer Camps</a>
                                 @foreach($campTypes as $camptype)
                                 <a href="/camp-page?type={{$camptype->id}}" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-100 hover:bg-brand-green">{{$camptype->name}}</a>
                                 @endforeach

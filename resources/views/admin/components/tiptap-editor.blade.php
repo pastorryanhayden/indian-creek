@@ -47,6 +47,14 @@
                 <span class="loading loading-spinner loading-sm"></span>
             </span>
         </button>
+        <button type="button" data-action="tiptap#uploadFile" data-tiptap-target="fileUploadButton" class="btn btn-sm join-item" title="Upload File">
+            <span data-tiptap-target="fileUploadIcon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 7l-6.5 6.5a1.5 1.5 0 0 0 3 3l6.5 -6.5a3 3 0 0 0 -6 -6l-6.5 6.5a4.5 4.5 0 0 0 9 9l6.5 -6.5" /></svg>
+            </span>
+            <span data-tiptap-target="fileUploadSpinner" class="hidden">
+                <span class="loading loading-spinner loading-sm"></span>
+            </span>
+        </button>
         <div class="divider divider-horizontal mx-1"></div>
         <button type="button" data-action="tiptap#undo" class="btn btn-sm join-item" title="Undo">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" /></svg>
@@ -64,6 +72,7 @@
 
     <!-- Hidden file input for image upload -->
     <input type="file" data-tiptap-target="imageInput" data-action="change->tiptap#handleImageUpload" accept="image/*" class="hidden">
+    <input type="file" data-tiptap-target="fileInput" data-action="change->tiptap#handleFileUpload" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip" class="hidden">
 
     <!-- Hidden input for form submission -->
     <textarea

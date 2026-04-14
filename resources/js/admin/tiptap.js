@@ -8,7 +8,7 @@ import Image from '@tiptap/extension-image';
 const application = Application.start();
 
 class TiptapController extends Controller {
-    static targets = ['editor', 'textarea', 'imageInput', 'uploadButton', 'uploadIcon', 'uploadSpinner'];
+    static targets = ['editor', 'textarea', 'imageInput', 'uploadButton', 'uploadIcon', 'uploadSpinner', 'fileInput', 'fileUploadButton', 'fileUploadIcon', 'fileUploadSpinner'];
     static values = { name: String };
 
     connect() {
@@ -117,6 +117,10 @@ class TiptapController extends Controller {
         this.imageInputTarget.click();
     }
 
+    uploadFile() {
+        this.fileInputTarget.click();
+    }
+
     handleImageUpload(event) {
         const file = event.target.files[0];
         if (!file) return;
@@ -147,6 +151,61 @@ class TiptapController extends Controller {
             this.uploadButtonTarget.disabled = false;
             this.uploadIconTarget.classList.remove('hidden');
             this.uploadSpinnerTarget.classList.add('hidden');
+            event.target.value = '';
+        });
+    }
+
+    handleFileUpload(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        this.fileUploadButtonTarget.disabled = true;
+        this.fileUploadIconTarget.classList.add('hidden');
+        this.fileUploadSpinnerTarget.classList.remove('hidden');
+
+        const { from, to, empty } = this.editor.state.selection;
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        window.axios.post('/admin/upload/file', formData, {
+            headers: { 'Content-Type': 'multipart/form-data' },
+        })
+        .then(response => {
+            const { url, name } = response.data;
+            const linkAttrs = { href: url, target: '_blank', rel: 'noopener noreferrer' };
+
+            if (empty) {
+                this.editor
+                    .chain()
+                    .focus()
+                    .insertContentAt(from, name)
+                    .setTextSelection({ from, to: from + name.length })
+                    .setLink(linkAttrs)
+                    .run();
+            } else {
+                this.editor
+                    .chain()
+                    .focus()
+                    .setTextSelection({ from, to })
+                    .extendMarkRange('link')
+                    .setLink(linkAttrs)
+                    .run();
+            }
+        })
+        .catch(error => {
+            if (error.response && error.response.status === 422) {
+                const errors = error.response.data.errors;
+                const message = errors.file ? errors.file.join('\n') : 'Validation failed.';
+                alert(message);
+            } else {
+                alert('File upload failed. Please try again.');
+            }
+        })
+        .finally(() => {
+            this.fileUploadButtonTarget.disabled = false;
+            this.fileUploadIconTarget.classList.remove('hidden');
+            this.fileUploadSpinnerTarget.classList.add('hidden');
             event.target.value = '';
         });
     }
