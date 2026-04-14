@@ -8,7 +8,7 @@ import Image from '@tiptap/extension-image';
 const application = Application.start();
 
 class TiptapController extends Controller {
-    static targets = ['editor', 'textarea', 'imageInput', 'uploadButton', 'uploadIcon', 'uploadSpinner'];
+    static targets = ['editor', 'textarea', 'imageInput', 'uploadButton', 'uploadIcon', 'uploadSpinner', 'fileInput', 'fileUploadButton', 'fileUploadIcon', 'fileUploadSpinner'];
     static values = { name: String };
 
     connect() {
@@ -115,6 +115,10 @@ class TiptapController extends Controller {
 
     uploadImage() {
         this.imageInputTarget.click();
+    }
+
+    uploadFile() {
+        this.fileInputTarget.click();
     }
 
     handleImageUpload(event) {
