@@ -17,7 +17,7 @@ function makeAdminUser(): User
 }
 
 it('admin can upload a pdf file', function () {
-    Storage::fake('s3');
+    Storage::fake('public');
     $admin = makeAdminUser();
 
     $response = $this->actingAs($admin)->post('/admin/upload/file', [
@@ -27,11 +27,11 @@ it('admin can upload a pdf file', function () {
     $response->assertOk();
     $response->assertJsonStructure(['url', 'name']);
     expect($response->json('name'))->toBe('handout.pdf');
-    expect(Storage::disk('s3')->allFiles('editor-files'))->not->toBeEmpty();
+    expect(Storage::disk('public')->allFiles('editor-files'))->not->toBeEmpty();
 });
 
 it('upload rejects disallowed mime type', function () {
-    Storage::fake('s3');
+    Storage::fake('public');
     $admin = makeAdminUser();
 
     $response = $this->actingAs($admin)
@@ -45,7 +45,7 @@ it('upload rejects disallowed mime type', function () {
 });
 
 it('upload rejects files over 10mb', function () {
-    Storage::fake('s3');
+    Storage::fake('public');
     $admin = makeAdminUser();
 
     $response = $this->actingAs($admin)

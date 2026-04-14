@@ -30,10 +30,10 @@ class UploadController extends Controller
         $uploaded = $request->file('file');
         $originalName = $uploaded->getClientOriginalName();
 
-        $path = $uploaded->store('editor-files', ['disk' => 's3', 'visibility' => 'public']);
+        $path = $uploaded->store('editor-files', 'public');
 
         return response()->json([
-            'url' => Storage::disk('s3')->url($path),
+            'url' => Storage::disk('public')->url($path),
             'name' => $originalName,
         ]);
     }
