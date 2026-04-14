@@ -15,7 +15,7 @@ class HomePageController extends Controller
             'id' => 1,
         ], [
             'main_title' => 'Made for More',
-            'main_subtitle' => 'Indian Creek 2025',
+            'main_subtitle' => 'Indian Creek 2026',
             'main_video' => 'https://www.youtube.com/embed/jYEsgNVv23Y?si=qjsEzRyVW7qWDOTV',
             'show_video' => true,
             'show_directions_section' => true,
