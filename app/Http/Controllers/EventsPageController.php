@@ -2,23 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Event;
+use Illuminate\Support\Carbon;
+use Illuminate\View\View;
 
 class EventsPageController extends Controller
 {
-    public function index()
+    public function index(): View
     {
-        $events = Event::where('is_open', true)
-                ->where('end_date', '>', Carbon::today())
-                ->get();
+        $events = Event::query()
+            ->where('is_open', true)
+            ->where('end_date', '>', Carbon::today())
+            ->orderBy('start_date')
+            ->get();
 
         return view('events', compact('events'));
     }
 
-     public function show($slug, Request $request)
+    public function show(string $slug): View
     {
-        $event = Event::where('slug', $slug)
+        $event = Event::query()
+            ->with('speakers')
+            ->where('slug', $slug)
             ->where('is_open', true)
             ->firstOrFail();
 

@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\CampPage;
+use Illuminate\Database\Seeder;
 
 class CampPageSeeder extends Seeder
 {
@@ -17,7 +16,7 @@ class CampPageSeeder extends Seeder
             ['id' => 1],
             [
                 // Hero section
-                'hero_season' => 'Summer 2026',
+                'hero_season' => 'Summer 2027',
                 'hero_title' => 'Summer Camp',
                 'hero_subtitle' => 'At ICBC',
                 'hero_helper_text' => 'Start your adventure in 5 easy steps.',

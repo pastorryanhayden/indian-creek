@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CampPage;
 use App\Models\CampType;
 use App\Models\CampWeek;
-use App\Models\CampPage;
 use Illuminate\Http\Request;
 
 class CampPageController extends Controller
@@ -15,7 +15,8 @@ class CampPageController extends Controller
         $types = CampType::all();
 
         $weeks = CampWeek::with(['speakers', 'type'])
-            ->where('status','!=' ,'hidden')
+            ->where('status', '!=', 'hidden')
+            ->orderBy('start_date')
             ->get();
 
         // Get query parameters

@@ -43,3 +43,7 @@
     left: 50%;
     transform: translate(-50%, -50%) rotate(-4deg);
 }
+
+[x-cloak] {
+    display: none !important;
+}
