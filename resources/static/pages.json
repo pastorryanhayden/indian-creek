@@ -1,0 +1,67 @@
+[
+  {
+    "path": "/",
+    "title": "Indian Creek Baptist Camp - Home",
+    "source": "pages/home.html"
+  },
+  {
+    "path": "/camp-page",
+    "title": "Indian Creek Baptist Camp - Plan Your Camp Week",
+    "source": "pages/camp-page.html"
+  },
+  {
+    "path": "/events",
+    "title": "Indian Creek Baptist Camp - Other Events",
+    "source": "pages/events.html"
+  },
+  {
+    "path": "/events/legacy-camp",
+    "title": "Indian Creek Baptist Camp - Legacy Camp",
+    "source": "pages/events/legacy-camp.html"
+  },
+  {
+    "path": "/page/camp-rentals",
+    "title": "Indian Creek Baptist Camp - The Adventure of a Lifetime",
+    "source": "pages/page/camp-rentals.html"
+  },
+  {
+    "path": "/page/our-staff",
+    "title": "Indian Creek Baptist Camp - The Adventure of a Lifetime",
+    "source": "pages/page/our-staff.html"
+  },
+  {
+    "path": "/page/our-beliefs",
+    "title": "Indian Creek Baptist Camp - The Adventure of a Lifetime",
+    "source": "pages/page/our-beliefs.html"
+  },
+  {
+    "path": "/page/our-history",
+    "title": "Indian Creek Baptist Camp - The Adventure of a Lifetime",
+    "source": "pages/page/our-history.html"
+  },
+  {
+    "path": "/page/camp-conduct-guide",
+    "title": "Indian Creek Baptist Camp - The Adventure of a Lifetime",
+    "source": "pages/page/camp-conduct-guide.html"
+  },
+  {
+    "path": "/page/directions-and-location",
+    "title": "Indian Creek Baptist Camp - The Adventure of a Lifetime",
+    "source": "pages/page/directions-and-location.html"
+  },
+  {
+    "path": "/page/what-to-pack",
+    "title": "Indian Creek Baptist Camp - The Adventure of a Lifetime",
+    "source": "pages/page/what-to-pack.html"
+  },
+  {
+    "path": "/page/church-counselors-guide",
+    "title": "Indian Creek Baptist Camp - The Adventure of a Lifetime",
+    "source": "pages/page/church-counselors-guide.html"
+  },
+  {
+    "path": "/page/support-icbc",
+    "title": "Indian Creek Baptist Camp - The Adventure of a Lifetime",
+    "source": "pages/page/support-icbc.html"
+  }
+]

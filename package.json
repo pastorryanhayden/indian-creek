@@ -3,7 +3,9 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "build:static": "node resources/js/static-build.mjs",
+        "preview:static": "node resources/js/static-preview.mjs"
     },
     "devDependencies": {
         "@tailwindcss/typography": "^0.5.16",
